@@ -1,6 +1,8 @@
 import React, {useState} from 'react';
 import './App.css';
 import Card from './components/card'
+import frontimg from './images/Front.png'
+import backimg from './images/Back.png'
 
 function Game1() {
     const [flipped, setFlipped] = useState([])
@@ -13,8 +15,8 @@ function Game1() {
           id={1}
           width={100}
           height={100}
-          back={'/Resources/back.png'}
-          front={'/Resources/front.png'}
+          back={backimg}
+          front={frontimg}
           flipped={flipped.includes(1)}
           handleClick={() => handleClick(1)}
           />

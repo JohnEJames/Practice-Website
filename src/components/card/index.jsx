@@ -2,6 +2,9 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import './styles.css'
 
+
+
+
 export default function Card({handleClick, id, flipped, back, front, height, width}){
     return <div className={`flip-container ${flipped ? 'flipped' : ''}`}
                 style={{
@@ -11,6 +14,7 @@ export default function Card({handleClick, id, flipped, back, front, height, wid
             >
                 <div className="flipper">
                 <img
+                   alt="Card"
                    style={{
                        height, width
                    }}
