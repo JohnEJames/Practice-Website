@@ -14,38 +14,38 @@ import Worthy from './../../images/Worthy.png'
 
 
 
-export function frontimage(type){
-    if (type == 'Berserker') {return Berserker}
-   else if  (type == 'Darkness') {return Darkness}
-   else if  (type == 'Light') {return Light}
-   else if  (type == 'Medic') {return Medic}
-   else if  (type == 'Mummies') {return Mummies}
-   else if  (type == 'PeaceKeeper') {return PeaceKeeper}
-   else if  (type == 'Ripple') {return Ripple}
-   else if  (type == 'Worthy') {return Worthy}
-   else return back
+export function frontimage(type) {
+    if (type == 'Berserker') { return Berserker }
+    else if (type == 'Darkness') { return Darkness }
+    else if (type == 'Light') { return Light }
+    else if (type == 'Medic') { return Medic }
+    else if (type == 'Mummies') { return Mummies }
+    else if (type == 'PeaceKeeper') { return PeaceKeeper }
+    else if (type == 'Ripple') { return Ripple }
+    else if (type == 'Worthy') { return Worthy }
+    else return back
 }
 
-export default function Card({handleClick, id, type, flipped, solved, height, width, disabled}){
+export default function Card({ handleClick, id, type, flipped, solved, height, width, disabled }) {
     return <div className={`flip-container ${flipped ? 'flipped' : ''}`}
+        style={{
+            width, height
+        }}
+        onClick={() => disabled ? null : handleClick(id)}
+    >
+        <div className="flipper">
+            <img
+                alt="Card"
                 style={{
-                    width, height
+                    height, width
                 }}
-                onClick={() => disabled ? null : handleClick(id)}
-            >
-                <div className="flipper">
-                <img
-                   alt="Card"
-                   style={{
-                       height, width
-                   }}
                 className={flipped ? 'front' : 'back'}
                 // src={flipped ? `/images/${type}.png` : back}
-                   src={flipped || solved ? frontimage(type) : back} 
-                />
-                >
+                src={flipped || solved ? frontimage(type) : back}
+            />
+            >
                 </div>
-                </div>
+    </div>
 }
 
 Card.propTypes = {

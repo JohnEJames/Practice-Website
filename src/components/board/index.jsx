@@ -7,12 +7,12 @@ export default function Board ({disabled, dimension, cards, flipped,solved, hand
     return ( <div className="board">
        {
            cards.map((card) => (
-           <Card
+           <Card className="card"
             key={card.id}
             type={card.type}
             id={card.id}
-            width={dimension /3}
-            height={dimension / 3}
+            width={dimension /4}
+            height={dimension / 4}
             flipped={flipped.includes(card.id)}
             solved = {solved.includes(card.id)}
             handleClick={handleClick}
